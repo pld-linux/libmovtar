@@ -5,7 +5,7 @@ diff -urN libmovtar-0.1.3.orig/configure.in libmovtar-0.1.3/configure.in
    mips*) 
     echo Activating IRIX changes !
     CFLAGS="$CFLAGS -DIRIX -DWORD_BIGENDIAN";;
-+  ppc*)
++  powerpc*)
 +   CFLAGS="$CFLAGS -DIRIX";;    
    i?86*) 
 -   echo Activating Intel MMX !
