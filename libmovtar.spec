@@ -12,7 +12,7 @@ Version:	0.1.3
 Release:	1
 License:	GPL
 Group:		Libraries
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/mjpeg/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/mjpeg/%{name}-%{version}.tar.gz
 Patch0:		%{name}-shared.patch
 Patch1:		%{name}-nommx.patch
 URL:		http://mjpeg.sourceforge.net/
