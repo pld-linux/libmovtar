@@ -1,12 +1,10 @@
 diff -urN libmovtar-0.1.3.orig/configure.in libmovtar-0.1.3/configure.in
 --- libmovtar-0.1.3.orig/configure.in	Sun Apr 27 10:39:06 2003
 +++ libmovtar-0.1.3/configure.in	Sun Apr 27 10:55:37 2003
-@@ -46,9 +46,10 @@
+@@ -46,9 +46,8 @@
    mips*) 
     echo Activating IRIX changes !
     CFLAGS="$CFLAGS -DIRIX -DWORD_BIGENDIAN";;
-+  powerpc*)
-+   CFLAGS="$CFLAGS -DIRIX";;    
    i?86*) 
 -   echo Activating Intel MMX !
 -   RTJPEG_MMX="-DMMX";;
@@ -28,6 +26,38 @@ diff -urN libmovtar-0.1.3.orig/movtar_play.c libmovtar-0.1.3/movtar_play.c
  #include <jpeglib.h>
  
  #include <glib.h>
+@@ -137,6 +137,7 @@
+ #if defined(__GNUC__)
+ #define int64 unsigned long long
+ #endif
++#ifdef __i386__
+ static const int64 te0 = 0x0080008000800080; // -128 << 2
+ static const int64 te1 = 0xe9fa7168e9fa7168; // for cb 
+ static const int64 te2 = 0x59bad24d59bad24d; // for cr
+@@ -258,6 +259,7 @@
+ 
+   asm ("emms");
+ }
++#endif
+ 
+ static int64 rb16mask = 0x00f800f800f800f8; // just red and blue remain
+ static int64 rb16mult = 0x2000000820000008; // mult/Add factor (see intel appnote 553)
+@@ -285,6 +287,7 @@
+   //printf("rb16mult = 0x%llx\n", rb16mult);
+ }
+ 
++#ifdef __i386__
+ /* RGB, 15/16 bits, 5-6bits each: (Junk), R, G, B */ 
+ METHODDEF(void)
+ ycc_rgb16_convert_mmx (j_decompress_ptr cinfo,
+@@ -458,6 +461,7 @@
+ 
+   asm ("emms");
+ }
++#endif
+ #endif // ifndef IRIX
+ 
+ /* end of custom color deconverter */
 @@ -579,7 +575,7 @@
      case 2:
  #ifndef IRIX
