@@ -1,15 +1,15 @@
 #
 # Conditional build:
-# _with_mmx - use MMX on i[56]86 (no runtime detection!)
+%bcond_with	mmx	# use MMX on i[56]86 (no runtime detection!)
 #
 %ifarch athlon
-%define		_with_mmx 1
+%define		with_mmx 1
 %endif
 Summary:	Support library for the movtar video format
 Summary(pl):	Biblioteka obs³uguj±ca format obrazu movtar
 Name:		libmovtar
 Version:	0.1.3
-Release:	2
+Release:	3
 License:	GPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/mjpeg/%{name}-%{version}.tar.gz
@@ -90,7 +90,7 @@ indeks filmu - dla eksperymentów i odpluskwiania).
 CPPFLAGS="-I/usr/X11R6/include"
 %configure \
 %ifarch i586 i686 athlon
-	%{?_with_mmx:--with-mmx}
+	%{?with_mmx:--with-mmx}
 %endif
 
 %{__make}
@@ -98,7 +98,8 @@ CPPFLAGS="-I/usr/X11R6/include"
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 mv -f rtjpeg/README README.rtjpeg
 
