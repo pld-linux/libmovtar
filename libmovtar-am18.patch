@@ -1,0 +1,20 @@
+--- libmovtar-0.1.3/movtar.m4.orig	2000-11-22 16:57:30.000000000 +0100
++++ libmovtar-0.1.3/movtar.m4	2003-12-28 10:27:30.631601128 +0100
+@@ -11,7 +11,7 @@
+ dnl and MOVTAR_VERSION for your plugin pleasure.
+ dnl
+ 
+-AC_DEFUN(MOVTAR_TEST_VERSION, [
++AC_DEFUN([MOVTAR_TEST_VERSION], [
+ 
+ # Determine which version number is greater. Prints 2 to stdout if	
+ # the second number is greater, 1 if the first number is greater,	
+@@ -56,7 +56,7 @@
+     fi
+ ])
+ 
+-AC_DEFUN(AM_PATH_MOVTAR,
++AC_DEFUN([AM_PATH_MOVTAR],
+ [
+ AC_ARG_WITH(movtar-prefix,[  --with-movtar-prefix=PFX  Prefix where movtar is installed (optional)],
+ 	movtar_config_prefix="$withval", movtar_config_prefix="")
