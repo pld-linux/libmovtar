@@ -1,5 +1,22 @@
---- libmovtar-0.1.3/movtar_play.c.orig	Fri Jul 13 23:38:03 2001
-+++ libmovtar-0.1.3/movtar_play.c	Sat Dec 21 17:51:50 2002
+diff -urN libmovtar-0.1.3.orig/configure.in libmovtar-0.1.3/configure.in
+--- libmovtar-0.1.3.orig/configure.in	Sun Apr 27 10:39:06 2003
++++ libmovtar-0.1.3/configure.in	Sun Apr 27 10:55:37 2003
+@@ -46,9 +46,10 @@
+   mips*) 
+    echo Activating IRIX changes !
+    CFLAGS="$CFLAGS -DIRIX -DWORD_BIGENDIAN";;
++  ppc*)
++   CFLAGS="$CFLAGS -DIRIX";;    
+   i?86*) 
+-   echo Activating Intel MMX !
+-   RTJPEG_MMX="-DMMX";;
++   AC_ARG_WITH(mmx, [  --with-mmx  Use MMX in RTjpeg (no)], RTJPEG_MMX="-DMMX", RTJPEG_MMX="");;
+ esac
+ 
+ dnl madmac/gernot: 
+diff -urN libmovtar-0.1.3.orig/movtar_play.c libmovtar-0.1.3/movtar_play.c
+--- libmovtar-0.1.3.orig/movtar_play.c	Sun Apr 27 10:39:06 2003
++++ libmovtar-0.1.3/movtar_play.c	Sun Apr 27 10:40:43 2003
 @@ -12,10 +12,6 @@
  #include <SDL/SDL.h>
  #include <SDL/SDL_timer.h>
@@ -20,15 +37,3 @@
  #else
        fprintf(stderr, "15/16 bits per pixel can't be decoded by libjpeg on IRIX!");
  #endif
---- libmovtar-0.1.3/configure.in.orig	Sat Apr 27 23:57:49 2002
-+++ libmovtar-0.1.3/configure.in	Sat Dec 21 18:11:56 2002
-@@ -47,8 +47,7 @@
-    echo Activating IRIX changes !
-    CFLAGS="$CFLAGS -DIRIX -DWORD_BIGENDIAN";;
-   i?86*) 
--   echo Activating Intel MMX !
--   RTJPEG_MMX="-DMMX";;
-+   AC_ARG_WITH(mmx, [  --with-mmx  Use MMX in RTjpeg (no)], RTJPEG_MMX="-DMMX", RTJPEG_MMX="");;
- esac
- 
- dnl madmac/gernot: 
