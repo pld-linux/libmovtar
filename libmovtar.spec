@@ -13,7 +13,7 @@ Release:	4
 License:	GPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/mjpeg/%{name}-%{version}.tar.gz
-# Source0-md5: 3810ba83a90c52676014ab1ea6d8cd9f
+# Source0-md5:	3810ba83a90c52676014ab1ea6d8cd9f
 Patch0:		%{name}-shared.patch
 Patch1:		%{name}-nommx.patch
 Patch2:		%{name}-glib.patch
