@@ -9,7 +9,7 @@ Summary:	Support library for the movtar video format
 Summary(pl):	Biblioteka obs³uguj±ca format obrazu movtar
 Name:		libmovtar
 Version:	0.1.3
-Release:	3
+Release:	4
 License:	GPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/mjpeg/%{name}-%{version}.tar.gz
@@ -17,6 +17,7 @@ Source0:	http://dl.sourceforge.net/mjpeg/%{name}-%{version}.tar.gz
 Patch0:		%{name}-shared.patch
 Patch1:		%{name}-nommx.patch
 Patch2:		%{name}-glib.patch
+Patch3:		%{name}-am18.patch
 URL:		http://mjpeg.sourceforge.net/
 BuildRequires:	SDL-devel >= 1.1.3
 BuildRequires:	autoconf
@@ -81,6 +82,7 @@ indeks filmu - dla eksperymentów i odpluskwiania).
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__libtoolize}
