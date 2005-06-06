@@ -25,6 +25,7 @@ BuildRequires:	automake
 BuildRequires:	glib2-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtool
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
