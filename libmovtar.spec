@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_with	mmx	# use MMX on ix86 (no runtime detection!)
+%bcond_without	mmx	# don't use MMX on ix86 (no runtime detection!)
 
 %ifnarch athlon pentium2 pentium3 pentium4
 %undefine	with_mmx
@@ -10,13 +10,13 @@ Summary:	Support library for the movtar video format
 Summary(pl):	Biblioteka obs³uguj±ca format obrazu movtar
 Name:		libmovtar
 Version:	0.1.3
-Release:	4.1
+Release:	5
 License:	GPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/mjpeg/%{name}-%{version}.tar.gz
 # Source0-md5:	3810ba83a90c52676014ab1ea6d8cd9f
 Patch0:		%{name}-shared.patch
-Patch1:		%{name}-nommx.patch
+Patch1:		%{name}-mmx.patch
 Patch2:		%{name}-glib.patch
 Patch3:		%{name}-am18.patch
 Patch4:		%{name}-gcc4.patch
@@ -94,12 +94,9 @@ indeks filmu - dla eksperymentów i odpluskwiania).
 %{__autoconf}
 %{__automake}
 
-# for movtar_play.
-%{?with_mmx:CPPFLAGS="-DHAVE_MMX_ATT_MNEMONICS"}
-
-%configure \
-	%{?with_mmx:--with-mmx}
-
+# for movtar_play and rtjpeg.
+%{?with_mmx:CPPFLAGS="-DMMX -DHAVE_MMX_ATT_MNEMONICS"}
+%configure
 %{__make}
 
 %install
