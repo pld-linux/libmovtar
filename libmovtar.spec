@@ -42,7 +42,7 @@ formatu obrazu MJPEG movtar.
 Summary:	libmovtar header files
 Summary(pl):	Pliki nag³ówkowe biblioteki libmovtar
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 libmovtar header files.
@@ -54,7 +54,7 @@ Pliki nag³ówkowe biblioteki libmovtar.
 Summary:	libmovtar static library
 Summary(pl):	Biblioteka statyczna libmovtar
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 libmovtar static library.
@@ -66,7 +66,7 @@ Biblioteka statyczna libmovtar.
 Summary:	Various tools for movtar video format
 Summary(pl):	Ró¿ne narzêdzia do formatu obrazu movtar
 Group:		Applications/Graphics
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description progs
 This package contains various tools to help you understand the
@@ -76,9 +76,9 @@ index, for experimental and debugging purposes).
 
 %description progs -l pl
 Ten pakiet zawiera ró¿ne narzêdzia pomagaj±ce zrozumieæ zasady
-dotycz±ce formatu movtar i wykonywaæ specjalne zadania niemo¿liwe
-do wykonania z poziomu biblioteki (jak movtar_index, który usuwa
-indeks filmu - dla eksperymentów i odpluskwiania).
+dotycz±ce formatu movtar i wykonywaæ specjalne zadania niemo¿liwe do
+wykonania z poziomu biblioteki (jak movtar_index, który usuwa indeks
+filmu - dla eksperymentów i odpluskwiania).
 
 %prep
 %setup -q
