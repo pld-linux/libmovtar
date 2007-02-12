@@ -7,7 +7,7 @@
 %endif
 
 Summary:	Support library for the movtar video format
-Summary(pl):	Biblioteka obs³uguj±ca format obrazu movtar
+Summary(pl.UTF-8):   Biblioteka obsÅ‚ugujÄ…ca format obrazu movtar
 Name:		libmovtar
 Version:	0.1.3
 Release:	5
@@ -34,37 +34,37 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This package includes libmovtar, the support library which implements
 the movtar MJPEG video format.
 
-%description -l pl
-Ten pakiet zawiera bibliotekê libmovtar, bêd±c± implementacj± obs³ugi
+%description -l pl.UTF-8
+Ten pakiet zawiera bibliotekÄ™ libmovtar, bÄ™dÄ…cÄ… implementacjÄ… obsÅ‚ugi
 formatu obrazu MJPEG movtar.
 
 %package devel
 Summary:	libmovtar header files
-Summary(pl):	Pliki nag³ówkowe biblioteki libmovtar
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libmovtar
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 libmovtar header files.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki libmovtar.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki libmovtar.
 
 %package static
 Summary:	libmovtar static library
-Summary(pl):	Biblioteka statyczna libmovtar
+Summary(pl.UTF-8):   Biblioteka statyczna libmovtar
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 libmovtar static library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna libmovtar.
 
 %package progs
 Summary:	Various tools for movtar video format
-Summary(pl):	Ró¿ne narzêdzia do formatu obrazu movtar
+Summary(pl.UTF-8):   RÃ³Å¼ne narzÄ™dzia do formatu obrazu movtar
 Group:		Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
@@ -74,11 +74,11 @@ principles behind the movtar format, and do special tasks which aren't
 possible with the library (like movtar_index, which removes a video
 index, for experimental and debugging purposes).
 
-%description progs -l pl
-Ten pakiet zawiera ró¿ne narzêdzia pomagaj±ce zrozumieæ zasady
-dotycz±ce formatu movtar i wykonywaæ specjalne zadania niemo¿liwe do
-wykonania z poziomu biblioteki (jak movtar_index, który usuwa indeks
-filmu - dla eksperymentów i odpluskwiania).
+%description progs -l pl.UTF-8
+Ten pakiet zawiera rÃ³Å¼ne narzÄ™dzia pomagajÄ…ce zrozumieÄ‡ zasady
+dotyczÄ…ce formatu movtar i wykonywaÄ‡ specjalne zadania niemoÅ¼liwe do
+wykonania z poziomu biblioteki (jak movtar_index, ktÃ³ry usuwa indeks
+filmu - dla eksperymentÃ³w i odpluskwiania).
 
 %prep
 %setup -q
