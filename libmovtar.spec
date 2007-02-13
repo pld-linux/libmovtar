@@ -7,7 +7,7 @@
 %endif
 
 Summary:	Support library for the movtar video format
-Summary(pl.UTF-8):   Biblioteka obsługująca format obrazu movtar
+Summary(pl.UTF-8):	Biblioteka obsługująca format obrazu movtar
 Name:		libmovtar
 Version:	0.1.3
 Release:	5
@@ -40,7 +40,7 @@ formatu obrazu MJPEG movtar.
 
 %package devel
 Summary:	libmovtar header files
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libmovtar
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libmovtar
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -52,7 +52,7 @@ Pliki nagłówkowe biblioteki libmovtar.
 
 %package static
 Summary:	libmovtar static library
-Summary(pl.UTF-8):   Biblioteka statyczna libmovtar
+Summary(pl.UTF-8):	Biblioteka statyczna libmovtar
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -64,7 +64,7 @@ Biblioteka statyczna libmovtar.
 
 %package progs
 Summary:	Various tools for movtar video format
-Summary(pl.UTF-8):   Różne narzędzia do formatu obrazu movtar
+Summary(pl.UTF-8):	Różne narzędzia do formatu obrazu movtar
 Group:		Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
