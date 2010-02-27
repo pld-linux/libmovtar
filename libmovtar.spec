@@ -10,7 +10,7 @@ Summary:	Support library for the movtar video format
 Summary(pl.UTF-8):	Biblioteka obsługująca format obrazu movtar
 Name:		libmovtar
 Version:	0.1.3
-Release:	7
+Release:	8
 License:	GPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/mjpeg/%{name}-%{version}.tar.gz
